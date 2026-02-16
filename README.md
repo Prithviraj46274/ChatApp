@@ -13,7 +13,7 @@ The app supports user authentication, one-to-one messaging, real-time updates, a
 
 Installation :
 1. Clone the repository:
-git clone https://github.com/your-username/chat-app.git  
+git clone https://github.com/Prithviraj46274/chat-app.git  
 cd chat-app
 
 2. Install dependencies:
