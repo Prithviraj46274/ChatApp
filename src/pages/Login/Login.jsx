@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+import './Login.css';
+import assets from '../../assets/assets'
+import { signup,login,resetPass } from '../../config/firebase'
+
+
+const Login = () => {
+
+const [currstate,setcurrstate]=useState("Sign Up");
+const [userName,setUserName]=useState("");
+const [email,setemail]=useState("");
+const [password,setpassword]=useState("");
+
+  const onSubmitHandler= (event) =>{
+    event.preventDefault();
+    if(currstate==="Sign Up"){
+      signup(userName,email,password);
+    }else{
+      login(email,password);
+    }
+  }
+
+  return (
+    <div className="login">
+      <img src={assets.logo_big} alt="" className="Logo"/>
+      <form onSubmit={onSubmitHandler} className="login-form">
+        <h2>{currstate}</h2>
+        {currstate==="Sign Up"?<input onChange={(e)=>setUserName(e.target.value)} value={userName} type="text" placeholder="username" className="form-input" required/>:null}
+        <input onChange={(e)=>setemail(e.target.value)} value={email} type="email"  placeholder="Email Address" className="form-input" required/>
+        <input onChange={(e)=>setpassword(e.target.value)} value={password} type="password" placeholder="Password" className="form-input" required/>
+        <button type="submit">{currstate==="Sign Up"?"Create Account":"Login now"}</button>
+        <div className="login-term">
+          <input type="checkbox" />
+          <p>Agree to the terms of use and privacy policy.</p>
+        </div>
+        <div className="login-forgot">
+          {currstate==="Sign Up"?
+          <p className="login-toggle">Already have an acoount <span onClick={()=>setcurrstate("Login")}>Login here</span></p>
+          :<p className="login-toggle">Create an account <span onClick={()=>setcurrstate("Sign Up")}>Click here</span></p>
+          }
+          {currstate==="Login"?<p className="login-toggle">Forgot Password <span onClick={()=>resetPass(email)}>Reset here</span></p>:null}
+          </div>
+      </form>
+    </div>
+  )
+}
+
+export default Login;
