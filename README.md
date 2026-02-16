@@ -1,16 +1,34 @@
-# React + Vite
+A modern real-time chat application built using React, Firebase, and Vite.
+The app supports user authentication, one-to-one messaging, real-time updates, and a clean responsive UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Features :
 
-Currently, two official plugins are available:
+1. User Authentication (Sign Up / Login / Password Reset)
+2. Real-time Messaging
+3. One-to-One Chat Support
+4. Live message updates without refresh
+5. Responsive UI (Desktop & Mobile)
+6. Cloud-based backend using Firebase
+7. Secure data storage with Firestore rules
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Installation :
+1. Clone the repository:
+git clone https://github.com/your-username/chat-app.git  
+cd chat-app
 
-## React Compiler
+2. Install dependencies:
+    npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Firebase Configuration
+Create a .env file in the root directory and add: 
+VITE_FIREBASE_API_KEY=your_api_key 
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain 
+VITE_FIREBASE_PROJECT_ID=your_project_id 
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket 
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id 
+VITE_FIREBASE_APP_ID=your_app_id
 
-## Expanding the ESLint configuration
+4. Run the application 
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
